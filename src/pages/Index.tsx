@@ -81,6 +81,7 @@ const Index = () => {
             <div className="hidden md:flex items-center space-x-8">
               <a href="#" className="text-foreground hover:text-primary transition-colors">Главная</a>
               <a href="#catalog" className="text-foreground hover:text-primary transition-colors">Каталог</a>
+              <a href="#brands" className="text-foreground hover:text-primary transition-colors">Бренды</a>
               <a href="#reviews" className="text-foreground hover:text-primary transition-colors">Отзывы</a>
               <a href="#" className="text-foreground hover:text-primary transition-colors">Доставка</a>
               <a href="#" className="text-foreground hover:text-primary transition-colors">Гарантия</a>
@@ -243,6 +244,49 @@ const Index = () => {
               <h3 className="font-bold mb-2">Удобная оплата</h3>
               <p className="text-muted-foreground">Рассрочка 0%</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brands Section */}
+      <section id="brands" className="py-16 px-4">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Популярные <span className="text-gradient">бренды</span>
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            {[
+              { name: 'Samsung', products: '850+ товаров' },
+              { name: 'LG', products: '720+ товаров' },
+              { name: 'Bosch', products: '560+ товаров' },
+              { name: 'Panasonic', products: '430+ товаров' },
+              { name: 'Electrolux', products: '380+ товаров' },
+              { name: 'Whirlpool', products: '320+ товаров' },
+              { name: 'Siemens', products: '290+ товаров' },
+              { name: 'Indesit', products: '250+ товаров' },
+              { name: 'Haier', products: '210+ товаров' },
+              { name: 'Candy', products: '180+ товаров' },
+              { name: 'Beko', products: '160+ товаров' },
+              { name: 'Gorenje', products: '140+ товаров' },
+            ].map((brand, index) => (
+              <div key={brand.name} className="text-center animate-fade-in hover-scale group cursor-pointer">
+                <div className="w-20 h-20 bg-white border-2 border-gray-100 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:border-primary transition-colors shadow-sm">
+                  <span className="text-2xl font-bold text-gray-700 group-hover:text-primary transition-colors">
+                    {brand.name.slice(0, 2).toUpperCase()}
+                  </span>
+                </div>
+                <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{brand.name}</h3>
+                <p className="text-sm text-muted-foreground">{brand.products}</p>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg" className="hover-scale">
+              <Icon name="Grid3X3" size={20} className="mr-2" />
+              Все бренды
+            </Button>
           </div>
         </div>
       </section>
